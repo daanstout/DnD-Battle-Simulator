@@ -1,0 +1,72 @@
+[
+  {
+    "type": 0,
+    "name": "Mixed Melee",
+    "description": "A unit filled with a healthy balance of units",
+    "offensiveDie": {
+      "dieCount": 5,
+      "dieSides": 8
+    },
+    "defensiveDie": {
+      "dieCount": 5,
+      "dieSides": 8
+    },
+    "armorClass": 16
+  },
+  {
+    "type": 0,
+    "name": "Swordsmen, Axemen",
+    "description": "Men armed with longswords or axes, and shields. Strong in both offense and defense.",
+    "offensiveDie": {
+      "dieCount": 6,
+      "dieSides": 8
+    },
+    "defensiveDie": {
+      "dieCount": 6,
+      "dieSides": 8
+    },
+    "armorClass": 18
+  },
+  {
+    "type": 0,
+    "name": "Great Swordsmen, Great Axemen",
+    "description": "Men armed with great swords or great axes. Great attackers, but weak defenders.",
+    "offensiveDie": {
+      "dieCount": 12,
+      "dieSides": 6
+    },
+    "defensiveDie": {
+      "dieCount": 6,
+      "dieSides": 6
+    },
+    "armorClass": 16
+  },
+  {
+    "type": 0,
+    "name": "Spearmen",
+    "description": "Men armed with spears and shields",
+    "offensiveDie": {
+      "dieCount": 6,
+      "dieSides": 6
+    },
+    "defensiveDie": {
+      "dieCount": 10,
+      "dieSides": 6
+    },
+    "armorClass": 18
+  },
+  {
+    "type": 0,
+    "name": "Polearms",
+    "description": "Men armed with polearm weapons. Great against cavalry",
+    "offensiveDie": {
+      "dieCount": 6,
+      "dieSides": 10
+    },
+    "defensiveDie": {
+      "dieCount": 12,
+      "dieSides": 10
+    },
+    "armorClass": 16
+  }
+]

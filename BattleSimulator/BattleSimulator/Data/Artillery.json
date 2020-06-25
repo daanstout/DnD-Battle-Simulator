@@ -1,0 +1,74 @@
+[
+  {
+    "type": 3,
+    "name": "Catapults",
+    "description": "Mobile stone throwers",
+    "offensiveDie": {
+      "dieCount": 20,
+      "dieSides": 4
+    },
+    "defensiveDie": {
+      "dieCount": 0,
+      "dieSides": 4
+    },
+    "armorClass": 3,
+    "range": {
+      "range": 80,
+      "maxRange": 320
+    }
+  },
+  {
+    "type": 3,
+    "name": "Scorpions",
+    "description": "Mobile bolt throwers.",
+    "offensiveDie": {
+      "dieCount": 4,
+      "dieSides": 8
+    },
+    "defensiveDie": {
+      "dieCount": 0,
+      "dieSides": 8
+    },
+    "armorClass": 3,
+    "range": {
+      "range": 150,
+      "maxRange": 600
+    }
+  },
+  {
+    "type": 3,
+    "name": "Ballistas",
+    "description": "Immobile bolt throwers.",
+    "offensiveDie": {
+      "dieCount": 4,
+      "dieSides": 10
+    },
+    "defensiveDie": {
+      "dieCount": 0,
+      "dieSides": 10
+    },
+    "armorClass": 3,
+    "range": {
+      "range": 200,
+      "maxRange": 800
+    }
+  },
+  {
+    "type": 3,
+    "name": "Trebuchets",
+    "description": "Immobile stone throwers",
+    "offensiveDie": {
+      "dieCount": 8,
+      "dieSides": 12
+    },
+    "defensiveDie": {
+      "dieCount": 0,
+      "dieSides": 12
+    },
+    "armorClass": 3,
+    "range": {
+      "range": 300,
+      "maxRange": 1200
+    }
+  }
+]

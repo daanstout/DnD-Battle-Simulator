@@ -1,0 +1,74 @@
+[
+  {
+    "type": 1,
+    "name": "Javelin",
+    "description": "A unit filled with a healthy balance of units",
+    "offensiveDie": {
+      "dieCount": 6,
+      "dieSides": 6
+    },
+    "defensiveDie": {
+      "dieCount": 0,
+      "dieSides": 6
+    },
+    "armorClass": 0,
+    "range": {
+      "range": 30,
+      "maxRange": 120
+    }
+  },
+  {
+    "type": 1,
+    "name": "Shortbow men",
+    "description": "Men armed with shortbows. Easy to use, but not very strong.",
+    "offensiveDie": {
+      "dieCount": 6,
+      "dieSides": 6
+    },
+    "defensiveDie": {
+      "dieCount": 2,
+      "dieSides": 6
+    },
+    "armorClass": 14,
+    "range": {
+      "range": 80,
+      "maxRange": 320
+    }
+  },
+  {
+    "type": 1,
+    "name": "Longbow men",
+    "description": "Men armed with longbows. Hard to use, but very strong.",
+    "offensiveDie": {
+      "dieCount": 6,
+      "dieSides": 8
+    },
+    "defensiveDie": {
+      "dieCount": 2,
+      "dieSides": 8
+    },
+    "armorClass": 14,
+    "range": {
+      "range": 150,
+      "maxRange": 600
+    }
+  },
+  {
+    "type": 1,
+    "name": "Heavy crossbow men",
+    "description": "Men armed with heavy crossbows. Easy to use, but not very fast",
+    "offensiveDie": {
+      "dieCount": 6,
+      "dieSides": 10
+    },
+    "defensiveDie": {
+      "dieCount": 2,
+      "dieSides": 10
+    },
+    "armorClass": 14,
+    "range": {
+      "range": 100,
+      "maxRange": 400
+    }
+  }
+]

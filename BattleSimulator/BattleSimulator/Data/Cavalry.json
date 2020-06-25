@@ -1,0 +1,66 @@
+[
+  {
+    "type": 2,
+    "name": "Scout",
+    "description": "Fast, lightly armed and armored cavalry with spears",
+    "offensiveDie": {
+      "dieCount": 4,
+      "dieSides": 6
+    },
+    "defensiveDie": {
+      "dieCount": 2,
+      "dieSides": 6
+    },
+    "armorClass": 14
+  },
+  {
+    "type": 2,
+    "name": "Archers",
+    "description": "Fast, lightly armed and armored with bows.",
+    "offensiveDie": {
+      "dieCount": 6,
+      "dieSides": 6
+    },
+    "defensiveDie": {
+      "dieCount": 2,
+      "dieSides": 6
+    },
+    "armorClass": 14,
+    "range": {
+      "range": 80,
+      "maxRange": 320
+    }
+  },
+  {
+    "type": 2,
+    "name": "Lancers",
+    "description": "Armored horse riders with lances and shields.",
+    "offensiveDie": {
+      "dieCount": 8,
+      "dieSides": 12
+    },
+    "defensiveDie": {
+      "dieCount": 4,
+      "dieSides": 12
+    },
+    "armorClass": 18
+  },
+  {
+    "type": 2,
+    "name": "Skirmishers",
+    "description": "Fast, armored cavalry with spears and/or javelins",
+    "offensiveDie": {
+      "dieCount": 8,
+      "dieSides": 6
+    },
+    "defensiveDie": {
+      "dieCount": 4,
+      "dieSides": 6
+    },
+    "armorClass": 16,
+    "range": {
+      "range": 30,
+      "maxRange": 120
+    }
+  }
+]
