@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Army\Actions.cs" />
+    <Compile Include="Army\AdvantageType.cs" />
     <Compile Include="Army\Battle.cs" />
     <Compile Include="Army\FightingUnit.cs" />
     <Compile Include="Army\Unit.cs" />

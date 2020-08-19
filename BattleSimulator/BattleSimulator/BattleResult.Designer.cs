@@ -44,6 +44,9 @@
             this.alliedUnitToHitTextbox = new System.Windows.Forms.TextBox();
             this.toHitLabel = new System.Windows.Forms.Label();
             this.closeButton = new System.Windows.Forms.Button();
+            this.enemyUnitAdvantageTextbox = new System.Windows.Forms.TextBox();
+            this.alliedUnitAdvantageTextbox = new System.Windows.Forms.TextBox();
+            this.advantageLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // alliedUnitLabel
@@ -82,18 +85,18 @@
             this.attackRollLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.attackRollLabel.Location = new System.Drawing.Point(10, 30);
             this.attackRollLabel.Name = "attackRollLabel";
-            this.attackRollLabel.Size = new System.Drawing.Size(79, 17);
+            this.attackRollLabel.Size = new System.Drawing.Size(110, 17);
             this.attackRollLabel.TabIndex = 11;
-            this.attackRollLabel.Text = "Attack Roll:";
+            this.attackRollLabel.Text = "Raw Attack Roll:";
             // 
             // alliedUnitAttackRoll
             // 
             this.alliedUnitAttackRoll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.alliedUnitAttackRoll.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.alliedUnitAttackRoll.Enabled = false;
             this.alliedUnitAttackRoll.ForeColor = System.Drawing.Color.White;
             this.alliedUnitAttackRoll.Location = new System.Drawing.Point(138, 30);
             this.alliedUnitAttackRoll.Name = "alliedUnitAttackRoll";
+            this.alliedUnitAttackRoll.ReadOnly = true;
             this.alliedUnitAttackRoll.Size = new System.Drawing.Size(72, 20);
             this.alliedUnitAttackRoll.TabIndex = 12;
             this.alliedUnitAttackRoll.TabStop = false;
@@ -102,10 +105,10 @@
             // 
             this.enemyUnitAttackRoll.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.enemyUnitAttackRoll.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.enemyUnitAttackRoll.Enabled = false;
             this.enemyUnitAttackRoll.ForeColor = System.Drawing.Color.White;
             this.enemyUnitAttackRoll.Location = new System.Drawing.Point(242, 30);
             this.enemyUnitAttackRoll.Name = "enemyUnitAttackRoll";
+            this.enemyUnitAttackRoll.ReadOnly = true;
             this.enemyUnitAttackRoll.Size = new System.Drawing.Size(72, 20);
             this.enemyUnitAttackRoll.TabIndex = 13;
             this.enemyUnitAttackRoll.TabStop = false;
@@ -114,10 +117,10 @@
             // 
             this.enemyUnitDamageTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.enemyUnitDamageTextbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.enemyUnitDamageTextbox.Enabled = false;
             this.enemyUnitDamageTextbox.ForeColor = System.Drawing.Color.White;
             this.enemyUnitDamageTextbox.Location = new System.Drawing.Point(242, 60);
             this.enemyUnitDamageTextbox.Name = "enemyUnitDamageTextbox";
+            this.enemyUnitDamageTextbox.ReadOnly = true;
             this.enemyUnitDamageTextbox.Size = new System.Drawing.Size(72, 20);
             this.enemyUnitDamageTextbox.TabIndex = 15;
             this.enemyUnitDamageTextbox.TabStop = false;
@@ -126,10 +129,10 @@
             // 
             this.alliedUnitDamageTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.alliedUnitDamageTextbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.alliedUnitDamageTextbox.Enabled = false;
             this.alliedUnitDamageTextbox.ForeColor = System.Drawing.Color.White;
             this.alliedUnitDamageTextbox.Location = new System.Drawing.Point(138, 60);
             this.alliedUnitDamageTextbox.Name = "alliedUnitDamageTextbox";
+            this.alliedUnitDamageTextbox.ReadOnly = true;
             this.alliedUnitDamageTextbox.Size = new System.Drawing.Size(72, 20);
             this.alliedUnitDamageTextbox.TabIndex = 14;
             this.alliedUnitDamageTextbox.TabStop = false;
@@ -138,10 +141,10 @@
             // 
             this.enemyUnitDamageDieTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.enemyUnitDamageDieTextbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.enemyUnitDamageDieTextbox.Enabled = false;
             this.enemyUnitDamageDieTextbox.ForeColor = System.Drawing.Color.White;
             this.enemyUnitDamageDieTextbox.Location = new System.Drawing.Point(242, 90);
             this.enemyUnitDamageDieTextbox.Name = "enemyUnitDamageDieTextbox";
+            this.enemyUnitDamageDieTextbox.ReadOnly = true;
             this.enemyUnitDamageDieTextbox.Size = new System.Drawing.Size(72, 20);
             this.enemyUnitDamageDieTextbox.TabIndex = 18;
             this.enemyUnitDamageDieTextbox.TabStop = false;
@@ -150,10 +153,10 @@
             // 
             this.alliedUnitDamageDieTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.alliedUnitDamageDieTextbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.alliedUnitDamageDieTextbox.Enabled = false;
             this.alliedUnitDamageDieTextbox.ForeColor = System.Drawing.Color.White;
             this.alliedUnitDamageDieTextbox.Location = new System.Drawing.Point(138, 90);
             this.alliedUnitDamageDieTextbox.Name = "alliedUnitDamageDieTextbox";
+            this.alliedUnitDamageDieTextbox.ReadOnly = true;
             this.alliedUnitDamageDieTextbox.Size = new System.Drawing.Size(72, 20);
             this.alliedUnitDamageDieTextbox.TabIndex = 17;
             this.alliedUnitDamageDieTextbox.TabStop = false;
@@ -172,10 +175,10 @@
             // 
             this.enemyUnitArmorClassTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.enemyUnitArmorClassTextbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.enemyUnitArmorClassTextbox.Enabled = false;
             this.enemyUnitArmorClassTextbox.ForeColor = System.Drawing.Color.White;
             this.enemyUnitArmorClassTextbox.Location = new System.Drawing.Point(242, 120);
             this.enemyUnitArmorClassTextbox.Name = "enemyUnitArmorClassTextbox";
+            this.enemyUnitArmorClassTextbox.ReadOnly = true;
             this.enemyUnitArmorClassTextbox.Size = new System.Drawing.Size(72, 20);
             this.enemyUnitArmorClassTextbox.TabIndex = 21;
             this.enemyUnitArmorClassTextbox.TabStop = false;
@@ -184,10 +187,10 @@
             // 
             this.alliedUnitArmorClassTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.alliedUnitArmorClassTextbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.alliedUnitArmorClassTextbox.Enabled = false;
             this.alliedUnitArmorClassTextbox.ForeColor = System.Drawing.Color.White;
             this.alliedUnitArmorClassTextbox.Location = new System.Drawing.Point(138, 120);
             this.alliedUnitArmorClassTextbox.Name = "alliedUnitArmorClassTextbox";
+            this.alliedUnitArmorClassTextbox.ReadOnly = true;
             this.alliedUnitArmorClassTextbox.Size = new System.Drawing.Size(72, 20);
             this.alliedUnitArmorClassTextbox.TabIndex = 20;
             this.alliedUnitArmorClassTextbox.TabStop = false;
@@ -206,10 +209,10 @@
             // 
             this.enemyUnitDamageModifierTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.enemyUnitDamageModifierTextbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.enemyUnitDamageModifierTextbox.Enabled = false;
             this.enemyUnitDamageModifierTextbox.ForeColor = System.Drawing.Color.White;
             this.enemyUnitDamageModifierTextbox.Location = new System.Drawing.Point(242, 150);
             this.enemyUnitDamageModifierTextbox.Name = "enemyUnitDamageModifierTextbox";
+            this.enemyUnitDamageModifierTextbox.ReadOnly = true;
             this.enemyUnitDamageModifierTextbox.Size = new System.Drawing.Size(72, 20);
             this.enemyUnitDamageModifierTextbox.TabIndex = 24;
             this.enemyUnitDamageModifierTextbox.TabStop = false;
@@ -218,10 +221,10 @@
             // 
             this.alliedUnitDamageModifierTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.alliedUnitDamageModifierTextbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.alliedUnitDamageModifierTextbox.Enabled = false;
             this.alliedUnitDamageModifierTextbox.ForeColor = System.Drawing.Color.White;
             this.alliedUnitDamageModifierTextbox.Location = new System.Drawing.Point(138, 150);
             this.alliedUnitDamageModifierTextbox.Name = "alliedUnitDamageModifierTextbox";
+            this.alliedUnitDamageModifierTextbox.ReadOnly = true;
             this.alliedUnitDamageModifierTextbox.Size = new System.Drawing.Size(72, 20);
             this.alliedUnitDamageModifierTextbox.TabIndex = 23;
             this.alliedUnitDamageModifierTextbox.TabStop = false;
@@ -240,10 +243,10 @@
             // 
             this.enemyUnitToHitTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.enemyUnitToHitTextbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.enemyUnitToHitTextbox.Enabled = false;
             this.enemyUnitToHitTextbox.ForeColor = System.Drawing.Color.White;
             this.enemyUnitToHitTextbox.Location = new System.Drawing.Point(242, 180);
             this.enemyUnitToHitTextbox.Name = "enemyUnitToHitTextbox";
+            this.enemyUnitToHitTextbox.ReadOnly = true;
             this.enemyUnitToHitTextbox.Size = new System.Drawing.Size(72, 20);
             this.enemyUnitToHitTextbox.TabIndex = 27;
             this.enemyUnitToHitTextbox.TabStop = false;
@@ -252,10 +255,10 @@
             // 
             this.alliedUnitToHitTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.alliedUnitToHitTextbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.alliedUnitToHitTextbox.Enabled = false;
             this.alliedUnitToHitTextbox.ForeColor = System.Drawing.Color.White;
             this.alliedUnitToHitTextbox.Location = new System.Drawing.Point(138, 180);
             this.alliedUnitToHitTextbox.Name = "alliedUnitToHitTextbox";
+            this.alliedUnitToHitTextbox.ReadOnly = true;
             this.alliedUnitToHitTextbox.Size = new System.Drawing.Size(72, 20);
             this.alliedUnitToHitTextbox.TabIndex = 26;
             this.alliedUnitToHitTextbox.TabStop = false;
@@ -273,7 +276,7 @@
             // closeButton
             // 
             this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.closeButton.Location = new System.Drawing.Point(135, 208);
+            this.closeButton.Location = new System.Drawing.Point(135, 238);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(75, 23);
             this.closeButton.TabIndex = 28;
@@ -281,12 +284,49 @@
             this.closeButton.UseVisualStyleBackColor = true;
             this.closeButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
+            // enemyUnitAdvantageTextbox
+            // 
+            this.enemyUnitAdvantageTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.enemyUnitAdvantageTextbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.enemyUnitAdvantageTextbox.ForeColor = System.Drawing.Color.White;
+            this.enemyUnitAdvantageTextbox.Location = new System.Drawing.Point(242, 210);
+            this.enemyUnitAdvantageTextbox.Name = "enemyUnitAdvantageTextbox";
+            this.enemyUnitAdvantageTextbox.ReadOnly = true;
+            this.enemyUnitAdvantageTextbox.Size = new System.Drawing.Size(72, 20);
+            this.enemyUnitAdvantageTextbox.TabIndex = 31;
+            this.enemyUnitAdvantageTextbox.TabStop = false;
+            // 
+            // alliedUnitAdvantageTextbox
+            // 
+            this.alliedUnitAdvantageTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.alliedUnitAdvantageTextbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.alliedUnitAdvantageTextbox.ForeColor = System.Drawing.Color.White;
+            this.alliedUnitAdvantageTextbox.Location = new System.Drawing.Point(138, 210);
+            this.alliedUnitAdvantageTextbox.Name = "alliedUnitAdvantageTextbox";
+            this.alliedUnitAdvantageTextbox.ReadOnly = true;
+            this.alliedUnitAdvantageTextbox.Size = new System.Drawing.Size(72, 20);
+            this.alliedUnitAdvantageTextbox.TabIndex = 30;
+            this.alliedUnitAdvantageTextbox.TabStop = false;
+            // 
+            // advantageLabel
+            // 
+            this.advantageLabel.AutoSize = true;
+            this.advantageLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.advantageLabel.Location = new System.Drawing.Point(10, 210);
+            this.advantageLabel.Name = "advantageLabel";
+            this.advantageLabel.Size = new System.Drawing.Size(116, 17);
+            this.advantageLabel.TabIndex = 29;
+            this.advantageLabel.Text = "Advantage Type:";
+            // 
             // BattleResult
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.ClientSize = new System.Drawing.Size(331, 243);
+            this.ClientSize = new System.Drawing.Size(331, 273);
+            this.Controls.Add(this.enemyUnitAdvantageTextbox);
+            this.Controls.Add(this.alliedUnitAdvantageTextbox);
+            this.Controls.Add(this.advantageLabel);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.enemyUnitToHitTextbox);
             this.Controls.Add(this.alliedUnitToHitTextbox);
@@ -341,5 +381,8 @@
         private System.Windows.Forms.TextBox alliedUnitToHitTextbox;
         private System.Windows.Forms.Label toHitLabel;
         private System.Windows.Forms.Button closeButton;
+        private System.Windows.Forms.TextBox enemyUnitAdvantageTextbox;
+        private System.Windows.Forms.TextBox alliedUnitAdvantageTextbox;
+        private System.Windows.Forms.Label advantageLabel;
     }
 }

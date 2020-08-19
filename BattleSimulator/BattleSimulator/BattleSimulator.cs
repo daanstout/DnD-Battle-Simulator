@@ -19,6 +19,8 @@ namespace BattleSimulator {
         private readonly List<Unit> units;
         private bool alliedAttacking = true;
         private bool enemyAttacking = false;
+        private AdvantageType alliedAdvantageType = AdvantageType.Normal;
+        private AdvantageType enemyAdvantageType = AdvantageType.Normal;
         private readonly Random rand;
         private Battle battle;
 
@@ -73,8 +75,6 @@ namespace BattleSimulator {
 
             if (enemyUnitCombobox.SelectedItem == null)
                 return false;
-
-
 
             return true;
         }
@@ -171,36 +171,103 @@ namespace BattleSimulator {
         }
 
         private void SimulateButton_Click(object sender, EventArgs e) {
-            if (!CheckForm())
+            if (!CheckForm()) {
+                errorLabel.Text = "Form is not sufficiently filled in";
+
                 return;
+            }
+
+            errorLabel.Text = "";
 
             battle = new Battle();
 
             var alliedUnit = alliedUnitCombobox.SelectedItem as Unit;
 
-            battle.alliedUnit.armorClass = alliedUnit.armorClass + (int)alliedUnitArmorClassAdditionNumeric.Value;
-            battle.alliedUnit.defensiveDie = alliedUnit.defensiveDie + (int)alliedUnitDefensiveDieAdditionNumeric.Value;
-            battle.alliedUnit.offensiveDie = alliedUnit.offensiveDie + (int)alliedUnitOffensiveDieAdditionNumeric.Value;
-            battle.alliedUnit.toHit = Convert.ToInt32(alliedUnitToHitBonusTextbox.Text);
-            battle.alliedUnit.unit = alliedUnit.Copy();
-            battle.alliedUnit.unitStrength = (int)alliedUnitStrengthNumeric.Value;
-            battle.alliedUnit.attacking = alliedAttacking;
-            battle.alliedUnit.action = (Actions)alliedUnitActionCombobox.SelectedItem;
-            battle.alliedUnit.leadershipBonus = (int)alliedUnitLeadershipBonusNumeric.Value;
+            battle.alliedUnit.ArmorClass = alliedUnit.armorClass + (int)alliedUnitArmorClassAdditionNumeric.Value;
+            battle.alliedUnit.DefensiveDie = alliedUnit.defensiveDie + (int)alliedUnitDefensiveDieAdditionNumeric.Value;
+            battle.alliedUnit.OffensiveDie = alliedUnit.offensiveDie + (int)alliedUnitOffensiveDieAdditionNumeric.Value;
+            battle.alliedUnit.ToHit = Convert.ToInt32(alliedUnitToHitBonusTextbox.Text);
+            battle.alliedUnit.Unit = alliedUnit.Copy();
+            battle.alliedUnit.UnitStrength = (int)alliedUnitStrengthNumeric.Value;
+            battle.alliedUnit.Attacking = alliedAttacking;
+            battle.alliedUnit.Action = (Actions)alliedUnitActionCombobox.SelectedItem;
+            battle.alliedUnit.LeadershipBonus = (int)alliedUnitLeadershipBonusNumeric.Value;
+            battle.alliedUnit.AdvantageType = alliedAdvantageType;
 
             var enemyUnit = enemyUnitCombobox.SelectedItem as Unit;
 
-            battle.enemyUnit.armorClass = enemyUnit.armorClass + (int)enemyUnitArmorClassAdditionNumeric.Value;
-            battle.enemyUnit.defensiveDie = enemyUnit.defensiveDie + (int)enemyUnitDefensiveDieAdditionNumeric.Value;
-            battle.enemyUnit.offensiveDie = enemyUnit.offensiveDie + (int)enemyUnitOffensiveDieAdditionNumeric.Value;
-            battle.enemyUnit.toHit = Convert.ToInt32(enemyUnitToHitBonusTextbox.Text);
-            battle.enemyUnit.unit = enemyUnit.Copy();
-            battle.enemyUnit.unitStrength = (int)enemyUnitStrengthNumeric.Value;
-            battle.enemyUnit.attacking = enemyAttacking;
-            battle.enemyUnit.action = (Actions)enemyUnitActionCombobox.SelectedItem;
-            battle.enemyUnit.leadershipBonus = (int)enemyUnitLeadershipBonusNumeric.Value;
+            battle.enemyUnit.ArmorClass = enemyUnit.armorClass + (int)enemyUnitArmorClassAdditionNumeric.Value;
+            battle.enemyUnit.DefensiveDie = enemyUnit.defensiveDie + (int)enemyUnitDefensiveDieAdditionNumeric.Value;
+            battle.enemyUnit.OffensiveDie = enemyUnit.offensiveDie + (int)enemyUnitOffensiveDieAdditionNumeric.Value;
+            battle.enemyUnit.ToHit = Convert.ToInt32(enemyUnitToHitBonusTextbox.Text);
+            battle.enemyUnit.Unit = enemyUnit.Copy();
+            battle.enemyUnit.UnitStrength = (int)enemyUnitStrengthNumeric.Value;
+            battle.enemyUnit.Attacking = enemyAttacking;
+            battle.enemyUnit.Action = (Actions)enemyUnitActionCombobox.SelectedItem;
+            battle.enemyUnit.LeadershipBonus = (int)enemyUnitLeadershipBonusNumeric.Value;
+            battle.enemyUnit.AdvantageType = enemyAdvantageType;
 
             new BattleResult(battle).ShowDialog();
+        }
+
+        private void AlliedAdvantageRadio_CheckedChanged(object sender, EventArgs e) {
+            if (!(sender is RadioButton radio))
+                return;
+
+            if (!radio.Checked)
+                return;
+
+            alliedAdvantageType = AdvantageType.Advantage;
+        }
+
+        private void AlliedNormalRadio_CheckedChanged(object sender, EventArgs e) {
+            if (!(sender is RadioButton radio))
+                return;
+
+            if (!radio.Checked)
+                return;
+
+            alliedAdvantageType = AdvantageType.Normal;
+        }
+
+        private void AlliedDisadvantageRadio_CheckedChanged(object sender, EventArgs e) {
+            if (!(sender is RadioButton radio))
+                return;
+
+            if (!radio.Checked)
+                return;
+
+            alliedAdvantageType = AdvantageType.Disadvantage;
+        }
+
+        private void EnemyAdvantageRadio_CheckedChanged(object sender, EventArgs e) {
+            if (!(sender is RadioButton radio))
+                return;
+
+            if (!radio.Checked)
+                return;
+
+            enemyAdvantageType = AdvantageType.Advantage;
+        }
+
+        private void EnemyNormalRadio_CheckedChanged(object sender, EventArgs e) {
+            if (!(sender is RadioButton radio))
+                return;
+
+            if (!radio.Checked)
+                return;
+
+            enemyAdvantageType = AdvantageType.Normal;
+        }
+
+        private void EnemyDisadvantageRadio_CheckedChanged(object sender, EventArgs e) {
+            if (!(sender is RadioButton radio))
+                return;
+
+            if (!radio.Checked)
+                return;
+
+            enemyAdvantageType = AdvantageType.Disadvantage;
         }
     }
 }

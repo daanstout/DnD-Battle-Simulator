@@ -12,31 +12,31 @@ using BattleSimulator.Army;
 
 namespace BattleSimulator {
     public partial class BattleResult : Form {
-        private readonly Battle battle;
         public BattleResult(Battle battle) {
             InitializeComponent();
 
-            this.battle = battle;
-
             battle.Calculate();
 
-            alliedUnitAttackRoll.Text = battle.alliedUnit.attackRoll.ToString();
-            enemyUnitAttackRoll.Text = battle.enemyUnit.attackRoll.ToString();
+            alliedUnitAttackRoll.Text = battle.alliedUnit.AttackRoll.ToString();
+            enemyUnitAttackRoll.Text = battle.enemyUnit.AttackRoll.ToString();
 
-            alliedUnitDamageTextbox.Text = battle.alliedUnit.damageDone.ToString();
-            enemyUnitDamageTextbox.Text = battle.enemyUnit.damageDone.ToString();
+            alliedUnitDamageTextbox.Text = battle.alliedUnit.DamageDone.ToString();
+            enemyUnitDamageTextbox.Text = battle.enemyUnit.DamageDone.ToString();
 
-            alliedUnitDamageDieTextbox.Text = battle.alliedUnit.attacking ? battle.alliedUnit.offensiveDie.ToString() : battle.alliedUnit.defensiveDie.ToString();
-            enemyUnitDamageDieTextbox.Text = battle.enemyUnit.attacking ? battle.enemyUnit.offensiveDie.ToString() : battle.enemyUnit.defensiveDie.ToString();
+            alliedUnitDamageDieTextbox.Text = battle.alliedUnit.Attacking ? battle.alliedUnit.OffensiveDie.ToString() : battle.alliedUnit.DefensiveDie.ToString();
+            enemyUnitDamageDieTextbox.Text = battle.enemyUnit.Attacking ? battle.enemyUnit.OffensiveDie.ToString() : battle.enemyUnit.DefensiveDie.ToString();
 
-            alliedUnitArmorClassTextbox.Text = battle.alliedUnit.armorClass.ToString();
-            enemyUnitArmorClassTextbox.Text = battle.enemyUnit.armorClass.ToString();
+            alliedUnitArmorClassTextbox.Text = battle.alliedUnit.ArmorClass.ToString();
+            enemyUnitArmorClassTextbox.Text = battle.enemyUnit.ArmorClass.ToString();
 
-            alliedUnitDamageModifierTextbox.Text = battle.alliedUnit.damageModifier.ToString();
-            enemyUnitDamageModifierTextbox.Text = battle.enemyUnit.damageModifier.ToString();
+            alliedUnitDamageModifierTextbox.Text = battle.alliedUnit.DamageModifier.ToString();
+            enemyUnitDamageModifierTextbox.Text = battle.enemyUnit.DamageModifier.ToString();
 
-            alliedUnitToHitTextbox.Text = battle.alliedUnit.toHit.ToString();
-            enemyUnitToHitTextbox.Text = battle.enemyUnit.toHit.ToString();
+            alliedUnitToHitTextbox.Text = battle.alliedUnit.ToHit.ToString();
+            enemyUnitToHitTextbox.Text = battle.enemyUnit.ToHit.ToString();
+
+            alliedUnitAdvantageTextbox.Text = battle.alliedUnit.AdvantageType.ToString();
+            enemyUnitAdvantageTextbox.Text = battle.enemyUnit.AdvantageType.ToString();
         }
 
         private void CloseButton_Click(object sender, EventArgs e) {

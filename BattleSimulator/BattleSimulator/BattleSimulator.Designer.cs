@@ -79,6 +79,15 @@
             this.actionLabel = new System.Windows.Forms.Label();
             this.enemyUnitActionCombobox = new System.Windows.Forms.ComboBox();
             this.alliedUnitActionCombobox = new System.Windows.Forms.ComboBox();
+            this.alliedAdvantagePanel = new System.Windows.Forms.Panel();
+            this.alliedDisadvantageRadio = new System.Windows.Forms.RadioButton();
+            this.alliedNormalRadio = new System.Windows.Forms.RadioButton();
+            this.alliedAdvantageRadio = new System.Windows.Forms.RadioButton();
+            this.enemyAdvantagePanel = new System.Windows.Forms.Panel();
+            this.enemyDisadvantageRadio = new System.Windows.Forms.RadioButton();
+            this.enemyNormalRadio = new System.Windows.Forms.RadioButton();
+            this.enemyAdvantageRadio = new System.Windows.Forms.RadioButton();
+            this.errorLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.alliedUnitOffensiveDieAdditionNumeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.enemyUnitOffensiveDieAdditionNumeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.enemyUnitDefensiveDieAdditionNumeric)).BeginInit();
@@ -95,6 +104,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.alliedUnitBaseToHitNumeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.enemyLeadershipModifierNumeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.alliedLeadershipModifierNumeric)).BeginInit();
+            this.alliedAdvantagePanel.SuspendLayout();
+            this.enemyAdvantagePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // alliedUnitCombobox
@@ -120,7 +131,7 @@
             this.enemyUnitCombobox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.enemyUnitCombobox.ForeColor = System.Drawing.Color.White;
             this.enemyUnitCombobox.FormattingEnabled = true;
-            this.enemyUnitCombobox.Location = new System.Drawing.Point(313, 29);
+            this.enemyUnitCombobox.Location = new System.Drawing.Point(325, 29);
             this.enemyUnitCombobox.Name = "enemyUnitCombobox";
             this.enemyUnitCombobox.Size = new System.Drawing.Size(181, 21);
             this.enemyUnitCombobox.Sorted = true;
@@ -151,10 +162,10 @@
             // 
             this.alliedUnitTypeTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.alliedUnitTypeTextbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.alliedUnitTypeTextbox.Enabled = false;
             this.alliedUnitTypeTextbox.ForeColor = System.Drawing.Color.White;
             this.alliedUnitTypeTextbox.Location = new System.Drawing.Point(126, 59);
             this.alliedUnitTypeTextbox.Name = "alliedUnitTypeTextbox";
+            this.alliedUnitTypeTextbox.ReadOnly = true;
             this.alliedUnitTypeTextbox.Size = new System.Drawing.Size(181, 20);
             this.alliedUnitTypeTextbox.TabIndex = 5;
             this.alliedUnitTypeTextbox.TabStop = false;
@@ -163,10 +174,10 @@
             // 
             this.enemyUnitTypeTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.enemyUnitTypeTextbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.enemyUnitTypeTextbox.Enabled = false;
             this.enemyUnitTypeTextbox.ForeColor = System.Drawing.Color.White;
-            this.enemyUnitTypeTextbox.Location = new System.Drawing.Point(313, 59);
+            this.enemyUnitTypeTextbox.Location = new System.Drawing.Point(325, 59);
             this.enemyUnitTypeTextbox.Name = "enemyUnitTypeTextbox";
+            this.enemyUnitTypeTextbox.ReadOnly = true;
             this.enemyUnitTypeTextbox.Size = new System.Drawing.Size(181, 20);
             this.enemyUnitTypeTextbox.TabIndex = 6;
             this.enemyUnitTypeTextbox.TabStop = false;
@@ -185,7 +196,7 @@
             // 
             this.enemyUnitLabel.AutoSize = true;
             this.enemyUnitLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.enemyUnitLabel.Location = new System.Drawing.Point(363, 9);
+            this.enemyUnitLabel.Location = new System.Drawing.Point(375, 9);
             this.enemyUnitLabel.Name = "enemyUnitLabel";
             this.enemyUnitLabel.Size = new System.Drawing.Size(80, 17);
             this.enemyUnitLabel.TabIndex = 8;
@@ -205,10 +216,10 @@
             // 
             this.alliedUnitOffensiveDieTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.alliedUnitOffensiveDieTextbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.alliedUnitOffensiveDieTextbox.Enabled = false;
             this.alliedUnitOffensiveDieTextbox.ForeColor = System.Drawing.Color.White;
             this.alliedUnitOffensiveDieTextbox.Location = new System.Drawing.Point(126, 90);
             this.alliedUnitOffensiveDieTextbox.Name = "alliedUnitOffensiveDieTextbox";
+            this.alliedUnitOffensiveDieTextbox.ReadOnly = true;
             this.alliedUnitOffensiveDieTextbox.Size = new System.Drawing.Size(100, 20);
             this.alliedUnitOffensiveDieTextbox.TabIndex = 10;
             this.alliedUnitOffensiveDieTextbox.TabStop = false;
@@ -217,10 +228,10 @@
             // 
             this.enemyUnitOffensiveDieTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.enemyUnitOffensiveDieTextbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.enemyUnitOffensiveDieTextbox.Enabled = false;
             this.enemyUnitOffensiveDieTextbox.ForeColor = System.Drawing.Color.White;
-            this.enemyUnitOffensiveDieTextbox.Location = new System.Drawing.Point(313, 90);
+            this.enemyUnitOffensiveDieTextbox.Location = new System.Drawing.Point(325, 90);
             this.enemyUnitOffensiveDieTextbox.Name = "enemyUnitOffensiveDieTextbox";
+            this.enemyUnitOffensiveDieTextbox.ReadOnly = true;
             this.enemyUnitOffensiveDieTextbox.Size = new System.Drawing.Size(100, 20);
             this.enemyUnitOffensiveDieTextbox.TabIndex = 11;
             this.enemyUnitOffensiveDieTextbox.TabStop = false;
@@ -242,7 +253,7 @@
             -2147483648});
             this.alliedUnitOffensiveDieAdditionNumeric.Name = "alliedUnitOffensiveDieAdditionNumeric";
             this.alliedUnitOffensiveDieAdditionNumeric.Size = new System.Drawing.Size(100, 20);
-            this.alliedUnitOffensiveDieAdditionNumeric.TabIndex = 12;
+            this.alliedUnitOffensiveDieAdditionNumeric.TabIndex = 2;
             // 
             // offensiveDieAdditionLabel
             // 
@@ -258,7 +269,7 @@
             // 
             this.enemyUnitOffensiveDieAdditionNumeric.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.enemyUnitOffensiveDieAdditionNumeric.ForeColor = System.Drawing.Color.White;
-            this.enemyUnitOffensiveDieAdditionNumeric.Location = new System.Drawing.Point(313, 120);
+            this.enemyUnitOffensiveDieAdditionNumeric.Location = new System.Drawing.Point(325, 120);
             this.enemyUnitOffensiveDieAdditionNumeric.Maximum = new decimal(new int[] {
             10,
             0,
@@ -271,13 +282,13 @@
             -2147483648});
             this.enemyUnitOffensiveDieAdditionNumeric.Name = "enemyUnitOffensiveDieAdditionNumeric";
             this.enemyUnitOffensiveDieAdditionNumeric.Size = new System.Drawing.Size(100, 20);
-            this.enemyUnitOffensiveDieAdditionNumeric.TabIndex = 14;
+            this.enemyUnitOffensiveDieAdditionNumeric.TabIndex = 3;
             // 
             // enemyUnitDefensiveDieAdditionNumeric
             // 
             this.enemyUnitDefensiveDieAdditionNumeric.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.enemyUnitDefensiveDieAdditionNumeric.ForeColor = System.Drawing.Color.White;
-            this.enemyUnitDefensiveDieAdditionNumeric.Location = new System.Drawing.Point(313, 180);
+            this.enemyUnitDefensiveDieAdditionNumeric.Location = new System.Drawing.Point(325, 180);
             this.enemyUnitDefensiveDieAdditionNumeric.Maximum = new decimal(new int[] {
             10,
             0,
@@ -290,7 +301,7 @@
             -2147483648});
             this.enemyUnitDefensiveDieAdditionNumeric.Name = "enemyUnitDefensiveDieAdditionNumeric";
             this.enemyUnitDefensiveDieAdditionNumeric.Size = new System.Drawing.Size(100, 20);
-            this.enemyUnitDefensiveDieAdditionNumeric.TabIndex = 20;
+            this.enemyUnitDefensiveDieAdditionNumeric.TabIndex = 5;
             // 
             // defensiveDieAdditionLabel
             // 
@@ -319,16 +330,16 @@
             -2147483648});
             this.alliedUnitDefensiveDieAdditionNumeric.Name = "alliedUnitDefensiveDieAdditionNumeric";
             this.alliedUnitDefensiveDieAdditionNumeric.Size = new System.Drawing.Size(100, 20);
-            this.alliedUnitDefensiveDieAdditionNumeric.TabIndex = 18;
+            this.alliedUnitDefensiveDieAdditionNumeric.TabIndex = 4;
             // 
             // enemyUnitDefensiveDieTextbox
             // 
             this.enemyUnitDefensiveDieTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.enemyUnitDefensiveDieTextbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.enemyUnitDefensiveDieTextbox.Enabled = false;
             this.enemyUnitDefensiveDieTextbox.ForeColor = System.Drawing.Color.White;
-            this.enemyUnitDefensiveDieTextbox.Location = new System.Drawing.Point(313, 150);
+            this.enemyUnitDefensiveDieTextbox.Location = new System.Drawing.Point(325, 150);
             this.enemyUnitDefensiveDieTextbox.Name = "enemyUnitDefensiveDieTextbox";
+            this.enemyUnitDefensiveDieTextbox.ReadOnly = true;
             this.enemyUnitDefensiveDieTextbox.Size = new System.Drawing.Size(100, 20);
             this.enemyUnitDefensiveDieTextbox.TabIndex = 17;
             this.enemyUnitDefensiveDieTextbox.TabStop = false;
@@ -337,10 +348,10 @@
             // 
             this.alliedUnitDefensiveDieTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.alliedUnitDefensiveDieTextbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.alliedUnitDefensiveDieTextbox.Enabled = false;
             this.alliedUnitDefensiveDieTextbox.ForeColor = System.Drawing.Color.White;
             this.alliedUnitDefensiveDieTextbox.Location = new System.Drawing.Point(126, 150);
             this.alliedUnitDefensiveDieTextbox.Name = "alliedUnitDefensiveDieTextbox";
+            this.alliedUnitDefensiveDieTextbox.ReadOnly = true;
             this.alliedUnitDefensiveDieTextbox.Size = new System.Drawing.Size(100, 20);
             this.alliedUnitDefensiveDieTextbox.TabIndex = 16;
             this.alliedUnitDefensiveDieTextbox.TabStop = false;
@@ -391,7 +402,7 @@
             // 
             this.enemyAttackingPanel.Controls.Add(this.enemyUnitAttackingRadio);
             this.enemyAttackingPanel.Controls.Add(this.enemyUnitDefendingRadio);
-            this.enemyAttackingPanel.Location = new System.Drawing.Point(419, 90);
+            this.enemyAttackingPanel.Location = new System.Drawing.Point(431, 90);
             this.enemyAttackingPanel.Name = "enemyAttackingPanel";
             this.enemyAttackingPanel.Size = new System.Drawing.Size(70, 90);
             this.enemyAttackingPanel.TabIndex = 24;
@@ -423,10 +434,10 @@
             // 
             this.enemyUnitArmorClassTetxbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.enemyUnitArmorClassTetxbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.enemyUnitArmorClassTetxbox.Enabled = false;
             this.enemyUnitArmorClassTetxbox.ForeColor = System.Drawing.Color.White;
-            this.enemyUnitArmorClassTetxbox.Location = new System.Drawing.Point(313, 210);
+            this.enemyUnitArmorClassTetxbox.Location = new System.Drawing.Point(325, 210);
             this.enemyUnitArmorClassTetxbox.Name = "enemyUnitArmorClassTetxbox";
+            this.enemyUnitArmorClassTetxbox.ReadOnly = true;
             this.enemyUnitArmorClassTetxbox.Size = new System.Drawing.Size(100, 20);
             this.enemyUnitArmorClassTetxbox.TabIndex = 27;
             this.enemyUnitArmorClassTetxbox.TabStop = false;
@@ -435,10 +446,10 @@
             // 
             this.alliedUnitArmorClassTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.alliedUnitArmorClassTextbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.alliedUnitArmorClassTextbox.Enabled = false;
             this.alliedUnitArmorClassTextbox.ForeColor = System.Drawing.Color.White;
             this.alliedUnitArmorClassTextbox.Location = new System.Drawing.Point(126, 210);
             this.alliedUnitArmorClassTextbox.Name = "alliedUnitArmorClassTextbox";
+            this.alliedUnitArmorClassTextbox.ReadOnly = true;
             this.alliedUnitArmorClassTextbox.Size = new System.Drawing.Size(100, 20);
             this.alliedUnitArmorClassTextbox.TabIndex = 26;
             this.alliedUnitArmorClassTextbox.TabStop = false;
@@ -457,7 +468,7 @@
             // 
             this.enemyUnitArmorClassAdditionNumeric.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.enemyUnitArmorClassAdditionNumeric.ForeColor = System.Drawing.Color.White;
-            this.enemyUnitArmorClassAdditionNumeric.Location = new System.Drawing.Point(313, 240);
+            this.enemyUnitArmorClassAdditionNumeric.Location = new System.Drawing.Point(325, 240);
             this.enemyUnitArmorClassAdditionNumeric.Maximum = new decimal(new int[] {
             10,
             0,
@@ -470,7 +481,7 @@
             -2147483648});
             this.enemyUnitArmorClassAdditionNumeric.Name = "enemyUnitArmorClassAdditionNumeric";
             this.enemyUnitArmorClassAdditionNumeric.Size = new System.Drawing.Size(100, 20);
-            this.enemyUnitArmorClassAdditionNumeric.TabIndex = 30;
+            this.enemyUnitArmorClassAdditionNumeric.TabIndex = 7;
             // 
             // armorClassAdditionsLabel
             // 
@@ -499,16 +510,16 @@
             -2147483648});
             this.alliedUnitArmorClassAdditionNumeric.Name = "alliedUnitArmorClassAdditionNumeric";
             this.alliedUnitArmorClassAdditionNumeric.Size = new System.Drawing.Size(100, 20);
-            this.alliedUnitArmorClassAdditionNumeric.TabIndex = 28;
+            this.alliedUnitArmorClassAdditionNumeric.TabIndex = 6;
             // 
             // enemyUnitRangeTextbox
             // 
             this.enemyUnitRangeTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.enemyUnitRangeTextbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.enemyUnitRangeTextbox.Enabled = false;
             this.enemyUnitRangeTextbox.ForeColor = System.Drawing.Color.White;
-            this.enemyUnitRangeTextbox.Location = new System.Drawing.Point(313, 300);
+            this.enemyUnitRangeTextbox.Location = new System.Drawing.Point(325, 300);
             this.enemyUnitRangeTextbox.Name = "enemyUnitRangeTextbox";
+            this.enemyUnitRangeTextbox.ReadOnly = true;
             this.enemyUnitRangeTextbox.Size = new System.Drawing.Size(100, 20);
             this.enemyUnitRangeTextbox.TabIndex = 33;
             this.enemyUnitRangeTextbox.TabStop = false;
@@ -517,10 +528,10 @@
             // 
             this.alliedUnitRangeTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.alliedUnitRangeTextbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.alliedUnitRangeTextbox.Enabled = false;
             this.alliedUnitRangeTextbox.ForeColor = System.Drawing.Color.White;
             this.alliedUnitRangeTextbox.Location = new System.Drawing.Point(126, 300);
             this.alliedUnitRangeTextbox.Name = "alliedUnitRangeTextbox";
+            this.alliedUnitRangeTextbox.ReadOnly = true;
             this.alliedUnitRangeTextbox.Size = new System.Drawing.Size(100, 20);
             this.alliedUnitRangeTextbox.TabIndex = 32;
             this.alliedUnitRangeTextbox.TabStop = false;
@@ -539,7 +550,7 @@
             // 
             this.enemyUnitStrengthNumeric.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.enemyUnitStrengthNumeric.ForeColor = System.Drawing.Color.White;
-            this.enemyUnitStrengthNumeric.Location = new System.Drawing.Point(313, 330);
+            this.enemyUnitStrengthNumeric.Location = new System.Drawing.Point(325, 330);
             this.enemyUnitStrengthNumeric.Maximum = new decimal(new int[] {
             10,
             0,
@@ -552,7 +563,7 @@
             0});
             this.enemyUnitStrengthNumeric.Name = "enemyUnitStrengthNumeric";
             this.enemyUnitStrengthNumeric.Size = new System.Drawing.Size(100, 20);
-            this.enemyUnitStrengthNumeric.TabIndex = 36;
+            this.enemyUnitStrengthNumeric.TabIndex = 11;
             this.enemyUnitStrengthNumeric.Value = new decimal(new int[] {
             10,
             0,
@@ -586,7 +597,7 @@
             0});
             this.alliedUnitStrengthNumeric.Name = "alliedUnitStrengthNumeric";
             this.alliedUnitStrengthNumeric.Size = new System.Drawing.Size(100, 20);
-            this.alliedUnitStrengthNumeric.TabIndex = 34;
+            this.alliedUnitStrengthNumeric.TabIndex = 10;
             this.alliedUnitStrengthNumeric.Value = new decimal(new int[] {
             10,
             0,
@@ -597,7 +608,7 @@
             // 
             this.enemyUnitLeadershipBonusNumeric.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.enemyUnitLeadershipBonusNumeric.ForeColor = System.Drawing.Color.White;
-            this.enemyUnitLeadershipBonusNumeric.Location = new System.Drawing.Point(313, 360);
+            this.enemyUnitLeadershipBonusNumeric.Location = new System.Drawing.Point(325, 360);
             this.enemyUnitLeadershipBonusNumeric.Maximum = new decimal(new int[] {
             30,
             0,
@@ -610,7 +621,7 @@
             0});
             this.enemyUnitLeadershipBonusNumeric.Name = "enemyUnitLeadershipBonusNumeric";
             this.enemyUnitLeadershipBonusNumeric.Size = new System.Drawing.Size(100, 20);
-            this.enemyUnitLeadershipBonusNumeric.TabIndex = 39;
+            this.enemyUnitLeadershipBonusNumeric.TabIndex = 13;
             this.enemyUnitLeadershipBonusNumeric.Value = new decimal(new int[] {
             20,
             0,
@@ -645,7 +656,7 @@
             0});
             this.alliedUnitLeadershipBonusNumeric.Name = "alliedUnitLeadershipBonusNumeric";
             this.alliedUnitLeadershipBonusNumeric.Size = new System.Drawing.Size(100, 20);
-            this.alliedUnitLeadershipBonusNumeric.TabIndex = 37;
+            this.alliedUnitLeadershipBonusNumeric.TabIndex = 2;
             this.alliedUnitLeadershipBonusNumeric.Value = new decimal(new int[] {
             20,
             0,
@@ -657,10 +668,10 @@
             // 
             this.enemyUnitToHitBonusTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.enemyUnitToHitBonusTextbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.enemyUnitToHitBonusTextbox.Enabled = false;
             this.enemyUnitToHitBonusTextbox.ForeColor = System.Drawing.Color.White;
-            this.enemyUnitToHitBonusTextbox.Location = new System.Drawing.Point(313, 390);
+            this.enemyUnitToHitBonusTextbox.Location = new System.Drawing.Point(325, 390);
             this.enemyUnitToHitBonusTextbox.Name = "enemyUnitToHitBonusTextbox";
+            this.enemyUnitToHitBonusTextbox.ReadOnly = true;
             this.enemyUnitToHitBonusTextbox.Size = new System.Drawing.Size(100, 20);
             this.enemyUnitToHitBonusTextbox.TabIndex = 42;
             this.enemyUnitToHitBonusTextbox.TabStop = false;
@@ -669,10 +680,10 @@
             // 
             this.alliedUnitToHitBonusTextbox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.alliedUnitToHitBonusTextbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.alliedUnitToHitBonusTextbox.Enabled = false;
             this.alliedUnitToHitBonusTextbox.ForeColor = System.Drawing.Color.White;
             this.alliedUnitToHitBonusTextbox.Location = new System.Drawing.Point(126, 390);
             this.alliedUnitToHitBonusTextbox.Name = "alliedUnitToHitBonusTextbox";
+            this.alliedUnitToHitBonusTextbox.ReadOnly = true;
             this.alliedUnitToHitBonusTextbox.Size = new System.Drawing.Size(100, 20);
             this.alliedUnitToHitBonusTextbox.TabIndex = 41;
             this.alliedUnitToHitBonusTextbox.TabStop = false;
@@ -691,7 +702,7 @@
             // 
             this.enemyUnitBaseToHitNumeric.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.enemyUnitBaseToHitNumeric.ForeColor = System.Drawing.Color.White;
-            this.enemyUnitBaseToHitNumeric.Location = new System.Drawing.Point(313, 270);
+            this.enemyUnitBaseToHitNumeric.Location = new System.Drawing.Point(325, 270);
             this.enemyUnitBaseToHitNumeric.Maximum = new decimal(new int[] {
             10,
             0,
@@ -699,7 +710,7 @@
             0});
             this.enemyUnitBaseToHitNumeric.Name = "enemyUnitBaseToHitNumeric";
             this.enemyUnitBaseToHitNumeric.Size = new System.Drawing.Size(100, 20);
-            this.enemyUnitBaseToHitNumeric.TabIndex = 45;
+            this.enemyUnitBaseToHitNumeric.TabIndex = 9;
             this.enemyUnitBaseToHitNumeric.ValueChanged += new System.EventHandler(this.EnemyUnitBaseToHitNumeric_ValueChanged);
             // 
             // baseToHitLabel
@@ -724,16 +735,17 @@
             0});
             this.alliedUnitBaseToHitNumeric.Name = "alliedUnitBaseToHitNumeric";
             this.alliedUnitBaseToHitNumeric.Size = new System.Drawing.Size(100, 20);
-            this.alliedUnitBaseToHitNumeric.TabIndex = 43;
+            this.alliedUnitBaseToHitNumeric.TabIndex = 8;
             this.alliedUnitBaseToHitNumeric.ValueChanged += new System.EventHandler(this.AlliedUnitBaseToHitNumeric_ValueChanged);
             // 
             // rollAlliedLeadershipButton
             // 
             this.rollAlliedLeadershipButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rollAlliedLeadershipButton.Location = new System.Drawing.Point(576, 30);
+            this.rollAlliedLeadershipButton.Location = new System.Drawing.Point(600, 30);
             this.rollAlliedLeadershipButton.Name = "rollAlliedLeadershipButton";
             this.rollAlliedLeadershipButton.Size = new System.Drawing.Size(90, 50);
             this.rollAlliedLeadershipButton.TabIndex = 46;
+            this.rollAlliedLeadershipButton.TabStop = false;
             this.rollAlliedLeadershipButton.Text = "Roll Allied Leadership";
             this.rollAlliedLeadershipButton.UseVisualStyleBackColor = true;
             this.rollAlliedLeadershipButton.Click += new System.EventHandler(this.RollAlliedLeadershipButton_Click);
@@ -741,11 +753,12 @@
             // rollEnemyLeadershipButton
             // 
             this.rollEnemyLeadershipButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rollEnemyLeadershipButton.Location = new System.Drawing.Point(689, 30);
+            this.rollEnemyLeadershipButton.Location = new System.Drawing.Point(713, 30);
             this.rollEnemyLeadershipButton.Name = "rollEnemyLeadershipButton";
             this.rollEnemyLeadershipButton.Size = new System.Drawing.Size(90, 50);
             this.rollEnemyLeadershipButton.TabIndex = 47;
-            this.rollEnemyLeadershipButton.Text = "Roll Allied Leadership";
+            this.rollEnemyLeadershipButton.TabStop = false;
+            this.rollEnemyLeadershipButton.Text = "Roll Enemy Leadership";
             this.rollEnemyLeadershipButton.UseVisualStyleBackColor = true;
             this.rollEnemyLeadershipButton.Click += new System.EventHandler(this.RollEnemyLeadershipButton_Click);
             // 
@@ -753,7 +766,7 @@
             // 
             this.enemyLeadershipModifierNumeric.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.enemyLeadershipModifierNumeric.ForeColor = System.Drawing.Color.White;
-            this.enemyLeadershipModifierNumeric.Location = new System.Drawing.Point(689, 90);
+            this.enemyLeadershipModifierNumeric.Location = new System.Drawing.Point(713, 90);
             this.enemyLeadershipModifierNumeric.Maximum = new decimal(new int[] {
             20,
             0,
@@ -767,12 +780,13 @@
             this.enemyLeadershipModifierNumeric.Name = "enemyLeadershipModifierNumeric";
             this.enemyLeadershipModifierNumeric.Size = new System.Drawing.Size(90, 20);
             this.enemyLeadershipModifierNumeric.TabIndex = 50;
+            this.enemyLeadershipModifierNumeric.TabStop = false;
             // 
             // modifierLabel
             // 
             this.modifierLabel.AutoSize = true;
             this.modifierLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.modifierLabel.Location = new System.Drawing.Point(506, 90);
+            this.modifierLabel.Location = new System.Drawing.Point(530, 90);
             this.modifierLabel.Name = "modifierLabel";
             this.modifierLabel.Size = new System.Drawing.Size(62, 17);
             this.modifierLabel.TabIndex = 49;
@@ -782,7 +796,7 @@
             // 
             this.alliedLeadershipModifierNumeric.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.alliedLeadershipModifierNumeric.ForeColor = System.Drawing.Color.White;
-            this.alliedLeadershipModifierNumeric.Location = new System.Drawing.Point(576, 90);
+            this.alliedLeadershipModifierNumeric.Location = new System.Drawing.Point(600, 90);
             this.alliedLeadershipModifierNumeric.Maximum = new decimal(new int[] {
             20,
             0,
@@ -796,15 +810,16 @@
             this.alliedLeadershipModifierNumeric.Name = "alliedLeadershipModifierNumeric";
             this.alliedLeadershipModifierNumeric.Size = new System.Drawing.Size(90, 20);
             this.alliedLeadershipModifierNumeric.TabIndex = 48;
+            this.alliedLeadershipModifierNumeric.TabStop = false;
             // 
             // simulateButton
             // 
             this.simulateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.simulateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simulateButton.Location = new System.Drawing.Point(576, 360);
+            this.simulateButton.Location = new System.Drawing.Point(600, 360);
             this.simulateButton.Name = "simulateButton";
             this.simulateButton.Size = new System.Drawing.Size(203, 60);
-            this.simulateButton.TabIndex = 51;
+            this.simulateButton.TabIndex = 16;
             this.simulateButton.Text = "Simulate";
             this.simulateButton.UseVisualStyleBackColor = true;
             this.simulateButton.Click += new System.EventHandler(this.SimulateButton_Click);
@@ -827,11 +842,11 @@
             this.enemyUnitActionCombobox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.enemyUnitActionCombobox.ForeColor = System.Drawing.Color.White;
             this.enemyUnitActionCombobox.FormattingEnabled = true;
-            this.enemyUnitActionCombobox.Location = new System.Drawing.Point(313, 419);
+            this.enemyUnitActionCombobox.Location = new System.Drawing.Point(325, 419);
             this.enemyUnitActionCombobox.Name = "enemyUnitActionCombobox";
             this.enemyUnitActionCombobox.Size = new System.Drawing.Size(181, 21);
             this.enemyUnitActionCombobox.Sorted = true;
-            this.enemyUnitActionCombobox.TabIndex = 54;
+            this.enemyUnitActionCombobox.TabIndex = 15;
             // 
             // alliedUnitActionCombobox
             // 
@@ -845,14 +860,116 @@
             this.alliedUnitActionCombobox.Name = "alliedUnitActionCombobox";
             this.alliedUnitActionCombobox.Size = new System.Drawing.Size(181, 21);
             this.alliedUnitActionCombobox.Sorted = true;
-            this.alliedUnitActionCombobox.TabIndex = 53;
+            this.alliedUnitActionCombobox.TabIndex = 14;
+            // 
+            // alliedAdvantagePanel
+            // 
+            this.alliedAdvantagePanel.Controls.Add(this.alliedDisadvantageRadio);
+            this.alliedAdvantagePanel.Controls.Add(this.alliedNormalRadio);
+            this.alliedAdvantagePanel.Controls.Add(this.alliedAdvantageRadio);
+            this.alliedAdvantagePanel.Location = new System.Drawing.Point(233, 187);
+            this.alliedAdvantagePanel.Name = "alliedAdvantagePanel";
+            this.alliedAdvantagePanel.Size = new System.Drawing.Size(85, 90);
+            this.alliedAdvantagePanel.TabIndex = 53;
+            // 
+            // alliedDisadvantageRadio
+            // 
+            this.alliedDisadvantageRadio.AutoSize = true;
+            this.alliedDisadvantageRadio.Location = new System.Drawing.Point(0, 60);
+            this.alliedDisadvantageRadio.Name = "alliedDisadvantageRadio";
+            this.alliedDisadvantageRadio.Size = new System.Drawing.Size(91, 17);
+            this.alliedDisadvantageRadio.TabIndex = 54;
+            this.alliedDisadvantageRadio.Text = "Disadvantage";
+            this.alliedDisadvantageRadio.UseVisualStyleBackColor = true;
+            this.alliedDisadvantageRadio.CheckedChanged += new System.EventHandler(this.AlliedDisadvantageRadio_CheckedChanged);
+            // 
+            // alliedNormalRadio
+            // 
+            this.alliedNormalRadio.AutoSize = true;
+            this.alliedNormalRadio.Checked = true;
+            this.alliedNormalRadio.Location = new System.Drawing.Point(0, 30);
+            this.alliedNormalRadio.Name = "alliedNormalRadio";
+            this.alliedNormalRadio.Size = new System.Drawing.Size(58, 17);
+            this.alliedNormalRadio.TabIndex = 23;
+            this.alliedNormalRadio.TabStop = true;
+            this.alliedNormalRadio.Text = "Normal";
+            this.alliedNormalRadio.UseVisualStyleBackColor = true;
+            this.alliedNormalRadio.CheckedChanged += new System.EventHandler(this.AlliedNormalRadio_CheckedChanged);
+            // 
+            // alliedAdvantageRadio
+            // 
+            this.alliedAdvantageRadio.AutoSize = true;
+            this.alliedAdvantageRadio.Location = new System.Drawing.Point(0, 0);
+            this.alliedAdvantageRadio.Name = "alliedAdvantageRadio";
+            this.alliedAdvantageRadio.Size = new System.Drawing.Size(77, 17);
+            this.alliedAdvantageRadio.TabIndex = 22;
+            this.alliedAdvantageRadio.Text = "Advantage";
+            this.alliedAdvantageRadio.UseVisualStyleBackColor = true;
+            this.alliedAdvantageRadio.CheckedChanged += new System.EventHandler(this.AlliedAdvantageRadio_CheckedChanged);
+            // 
+            // enemyAdvantagePanel
+            // 
+            this.enemyAdvantagePanel.Controls.Add(this.enemyDisadvantageRadio);
+            this.enemyAdvantagePanel.Controls.Add(this.enemyNormalRadio);
+            this.enemyAdvantagePanel.Controls.Add(this.enemyAdvantageRadio);
+            this.enemyAdvantagePanel.Location = new System.Drawing.Point(431, 187);
+            this.enemyAdvantagePanel.Name = "enemyAdvantagePanel";
+            this.enemyAdvantagePanel.Size = new System.Drawing.Size(85, 90);
+            this.enemyAdvantagePanel.TabIndex = 54;
+            // 
+            // enemyDisadvantageRadio
+            // 
+            this.enemyDisadvantageRadio.AutoSize = true;
+            this.enemyDisadvantageRadio.Location = new System.Drawing.Point(0, 60);
+            this.enemyDisadvantageRadio.Name = "enemyDisadvantageRadio";
+            this.enemyDisadvantageRadio.Size = new System.Drawing.Size(91, 17);
+            this.enemyDisadvantageRadio.TabIndex = 54;
+            this.enemyDisadvantageRadio.Text = "Disadvantage";
+            this.enemyDisadvantageRadio.UseVisualStyleBackColor = true;
+            this.enemyDisadvantageRadio.CheckedChanged += new System.EventHandler(this.EnemyDisadvantageRadio_CheckedChanged);
+            // 
+            // enemyNormalRadio
+            // 
+            this.enemyNormalRadio.AutoSize = true;
+            this.enemyNormalRadio.Checked = true;
+            this.enemyNormalRadio.Location = new System.Drawing.Point(0, 30);
+            this.enemyNormalRadio.Name = "enemyNormalRadio";
+            this.enemyNormalRadio.Size = new System.Drawing.Size(58, 17);
+            this.enemyNormalRadio.TabIndex = 23;
+            this.enemyNormalRadio.TabStop = true;
+            this.enemyNormalRadio.Text = "Normal";
+            this.enemyNormalRadio.UseVisualStyleBackColor = true;
+            this.enemyNormalRadio.CheckedChanged += new System.EventHandler(this.EnemyNormalRadio_CheckedChanged);
+            // 
+            // enemyAdvantageRadio
+            // 
+            this.enemyAdvantageRadio.AutoSize = true;
+            this.enemyAdvantageRadio.Location = new System.Drawing.Point(0, 0);
+            this.enemyAdvantageRadio.Name = "enemyAdvantageRadio";
+            this.enemyAdvantageRadio.Size = new System.Drawing.Size(77, 17);
+            this.enemyAdvantageRadio.TabIndex = 22;
+            this.enemyAdvantageRadio.Text = "Advantage";
+            this.enemyAdvantageRadio.UseVisualStyleBackColor = true;
+            this.enemyAdvantageRadio.CheckedChanged += new System.EventHandler(this.EnemyAdvantageRadio_CheckedChanged);
+            // 
+            // errorLabel
+            // 
+            this.errorLabel.AutoSize = true;
+            this.errorLabel.ForeColor = System.Drawing.Color.Red;
+            this.errorLabel.Location = new System.Drawing.Point(600, 341);
+            this.errorLabel.Name = "errorLabel";
+            this.errorLabel.Size = new System.Drawing.Size(0, 13);
+            this.errorLabel.TabIndex = 55;
             // 
             // BattleSimulator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.ClientSize = new System.Drawing.Size(800, 454);
+            this.ClientSize = new System.Drawing.Size(834, 461);
+            this.Controls.Add(this.errorLabel);
+            this.Controls.Add(this.enemyAdvantagePanel);
+            this.Controls.Add(this.alliedAdvantagePanel);
             this.Controls.Add(this.actionLabel);
             this.Controls.Add(this.enemyUnitActionCombobox);
             this.Controls.Add(this.alliedUnitActionCombobox);
@@ -930,6 +1047,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.alliedUnitBaseToHitNumeric)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.enemyLeadershipModifierNumeric)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.alliedLeadershipModifierNumeric)).EndInit();
+            this.alliedAdvantagePanel.ResumeLayout(false);
+            this.alliedAdvantagePanel.PerformLayout();
+            this.enemyAdvantagePanel.ResumeLayout(false);
+            this.enemyAdvantagePanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -993,6 +1114,15 @@
         private System.Windows.Forms.Label actionLabel;
         private System.Windows.Forms.ComboBox enemyUnitActionCombobox;
         private System.Windows.Forms.ComboBox alliedUnitActionCombobox;
+        private System.Windows.Forms.Panel alliedAdvantagePanel;
+        private System.Windows.Forms.RadioButton alliedDisadvantageRadio;
+        private System.Windows.Forms.RadioButton alliedNormalRadio;
+        private System.Windows.Forms.RadioButton alliedAdvantageRadio;
+        private System.Windows.Forms.Panel enemyAdvantagePanel;
+        private System.Windows.Forms.RadioButton enemyDisadvantageRadio;
+        private System.Windows.Forms.RadioButton enemyNormalRadio;
+        private System.Windows.Forms.RadioButton enemyAdvantageRadio;
+        private System.Windows.Forms.Label errorLabel;
     }
 }
 

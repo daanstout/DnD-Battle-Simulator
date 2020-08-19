@@ -21,38 +21,43 @@ namespace BattleSimulator.Army {
         }
 
         public void Calculate() {
-            alliedUnit.damageDone = Calculate(alliedUnit, enemyUnit);
-            enemyUnit.damageDone = Calculate(enemyUnit, alliedUnit);
+            alliedUnit.DamageDone = Calculate(alliedUnit, enemyUnit);
+            enemyUnit.DamageDone = Calculate(enemyUnit, alliedUnit);
         }
 
         private int Calculate(FightingUnit unitFrom, FightingUnit unitTo) {
-            var battleDice = unitFrom.attacking ? unitFrom.offensiveDie : unitFrom.defensiveDie;
-            var AC = unitTo.armorClass;
-            if (!unitTo.attacking && unitTo.action == Actions.shieldFormation && unitFrom.unit.type == UnitTypes.ranged)
+            var battleDice = unitFrom.Attacking ? unitFrom.OffensiveDie : unitFrom.DefensiveDie;
+            var AC = unitTo.ArmorClass;
+            if (!unitTo.Attacking && unitTo.Action == Actions.shieldFormation && unitFrom.Unit.type == UnitTypes.ranged)
                 AC += 2;
-            else if (!unitTo.attacking && unitTo.action == Actions.defensiveStance)
-                AC += ((unitTo.leadershipBonus / 2 - 5) / 2) + 1;
-            else if (unitTo.action == Actions.charge && unitTo.attacking && unitTo.unit.type == UnitTypes.infantry)
+            else if (!unitTo.Attacking && unitTo.Action == Actions.defensiveStance)
+                AC += (unitTo.LeadershipBonus - 6 ) / 4;
+            else if (unitTo.Action == Actions.charge && unitTo.Attacking && unitTo.Unit.type == UnitTypes.infantry)
                 AC -= 3;
-            var toHit = unitFrom.toHit;
-            if (!unitFrom.attacking && unitFrom.action == Actions.offensiveStance)
+            var toHit = unitFrom.ToHit;
+            if (!unitFrom.Attacking && unitFrom.Action == Actions.offensiveStance)
                 toHit++;
-            var damageMod = (unitFrom.attacking && unitFrom.action == Actions.charge && unitFrom.unit.name != "Polearms") ? 1.5f : 1.0f;
-            if (unitFrom.unit.name == "Polearms" && unitTo.unit.type == UnitTypes.cavalry) {
+            var damageMod = (unitFrom.Attacking && unitFrom.Action == Actions.charge && unitFrom.Unit.name != "Polearms") ? 1.5f : 1.0f;
+            if (unitFrom.Unit.name == "Polearms" && unitTo.Unit.type == UnitTypes.cavalry) {
                 damageMod *= 2;
-                if (unitTo.action == Actions.charge && unitTo.attacking)
+                if (unitTo.Action == Actions.charge && unitTo.Attacking)
                     damageMod *= 2;
             }
 
-            unitFrom.attackRoll = rand.Next(1, 21);
-            //unitFrom.attackRoll = unitFrom.attacking ? 16 : 15;
-            var attackHit = unitFrom.attackRoll + toHit;
+            unitFrom.AttackRoll = unitFrom.AdvantageType switch
+            {
+                AdvantageType.Advantage => Math.Max(rand.Next(1, 21), rand.Next(1, 21)),
+                AdvantageType.Disadvantage => Math.Min(rand.Next(1, 21), rand.Next(1, 21)),
+                _ => rand.Next(1, 21)
+            };
+            
+            var attackHit = unitFrom.AttackRoll + toHit;
 
-            var nat20 = unitFrom.attackRoll == 20;
+            var nat20 = unitFrom.AttackRoll == 20;
 
             var ACdifferential = attackHit - AC;
 
-            if (ACdifferential <= -6 && !(unitFrom.attacking && unitFrom.unit.type == UnitTypes.cavalry && unitFrom.action == Actions.charge))
+            if (ACdifferential <= -6 && !(unitFrom.Attacking && unitFrom.Unit.type == UnitTypes.cavalry && unitFrom.Action == Actions.charge))
                 battleDice.dieCount = 0;
             else
                 battleDice.dieCount += (ACdifferential / 2);
@@ -62,24 +67,24 @@ namespace BattleSimulator.Army {
             if (nat20)
                 pool.flatBonus = battleDice.dieSides;
 
-            if (!unitFrom.attacking && unitFrom.unit.type == UnitTypes.artillery) {
+            if (!unitFrom.Attacking && unitFrom.Unit.type == UnitTypes.artillery) {
                 pool = new DicePool();
                 battleDice.dieCount = 0;
             }
 
             int totalDamage = 0;
 
-            for (int i = 0; i < unitFrom.unitStrength; i++)
+            for (int i = 0; i < unitFrom.UnitStrength; i++)
                 totalDamage += pool.CalculateDamage(rand);
 
-            if (unitFrom.attacking)
-                unitFrom.offensiveDie = battleDice;
+            if (unitFrom.Attacking)
+                unitFrom.OffensiveDie = battleDice;
             else
-                unitFrom.defensiveDie = battleDice;
+                unitFrom.DefensiveDie = battleDice;
 
-            unitTo.armorClass = AC;
-            unitFrom.toHit = toHit;
-            unitFrom.damageModifier = damageMod;
+            unitTo.ArmorClass = AC;
+            unitFrom.ToHit = toHit;
+            unitFrom.DamageModifier = damageMod;
 
             return (int)(totalDamage * damageMod);
         }
